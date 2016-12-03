@@ -1,0 +1,255 @@
+@import "reset";
+@import "mixins";
+
+body {
+  width:1920px;
+  height:1080px;
+  font-family:$font-family;
+  overflow:hidden;
+
+  &:before {
+    position: absolute;
+    content:"";
+    width:1920px;
+    height:1080px;
+    top:0;
+    left:0;
+    background-image:url("../images/background-tile.png");
+    opacity:0.5;
+    z-index:1;
+  }
+
+}
+
+header {
+  width:100%;
+  padding:2px;
+  background:$white;
+  border:$standard-border;
+  position: relative;
+  z-index:$week-1;
+
+  .icon--gift {
+    width:10px;
+    height:10px;
+    background-color:$black;
+    position: absolute;
+    top:15px;
+    left:20px;
+    box-shadow:12px 0 0 $black, 0 12px 0 $black, 12px 12px 0 $black;
+
+    .icon--ribbon {
+      width:5px;
+      height:5px;
+      background-color:$black;
+      position: absolute;
+      top:-5px;
+      left:5px;
+      box-shadow:-5px -5px 0 $black, 7px 0 0 $black, 12px -5px 0 $black;
+    }
+  }
+
+  h2 {
+    margin: 0;
+    font-size:28px;
+    position: relative;
+    left:60px;
+    width:80%;
+  }
+}
+
+main {
+  width:100%;
+}
+
+/* CALENDAR DAYS */
+
+.day1 {
+  @include day($top:174px,$left:771px);
+}
+
+.day2 {
+  @include day($top:619px,$left:416px);
+}
+
+.day3 {
+  @include day($top:174px,$left:1481px);
+}
+
+.day4 {
+  @include day($top:174px,$left:61px);
+}
+
+.day5 {
+  @include day($top:546px,$left:771px);
+}
+
+.day6 {
+  @include day($top:247px,$left:1126px);
+}
+
+.day7 {
+  @include day($top:546px,$left:61px);
+}
+
+.day8 {
+  @include day($top:546px,$left:1481px);
+}
+
+.day9 {
+  @include day($top:247px,$left:416px);
+}
+
+.day10 {
+  @include day($top:619px,$left:1126px);
+}
+
+.day11 {
+  @include day($width:$width-medium, $z-index:$week-2,$top:226px,$left:96px);
+}
+
+.day12 {
+  @include day($width:$width-medium, $z-index:$week-2, $top:516px,$left:1161px);
+}
+
+.day13 {
+  @include day($width:$width-medium, $z-index:$week-2, $top:217px,$left:806px);
+}
+
+.day14 {
+  @include day($width:$width-medium, $z-index:$week-2, $top:589px,$left:1516px);
+}
+
+.day15 {
+  @include day($width:$width-medium, $z-index:$week-2, $top:592px,$left:96px);
+}
+
+.day16 {
+  @include day($width:$width-medium, $z-index:$week-2, $top:589px,$left:806px);
+}
+
+.day17 {
+  @include day($width:$width-medium, $z-index:$week-2, $top:217px,$left:1516px);
+}
+
+.day18 {
+  @include day($width:$width-medium, $z-index:$week-2, $top:516px,$left:451px);
+}
+
+.day19 {
+  @include day($width:$width-medium, $z-index:$week-2, $top:144px,$left:1161px);
+}
+
+.day20 {
+  @include day($width:$width-medium, $z-index:$week-2, $top:144px,$left:451px);
+}
+
+.day21 {
+  @include day($width:$width-large, $z-index:$week-3, $top:688px,$left:1011px);
+}
+
+.day22 {
+  @include day($width:$width-large, $z-index:$week-3, $top:225px,$left:430px);
+}
+
+.day23 {
+  @include day($width:$width-large, $z-index:$week-3, $top:598px,$left:430px);
+}
+
+.day24 {
+  @include day($width:$width-large, $z-index:$week-3, $top:296px,$left:1011px);
+}
+
+.area__document {
+  position: absolute;
+  z-index:$week-1;
+  top:920px;
+  left:1760px;
+
+.document {
+  width:80px;
+  height:90px;
+  position: relative;
+  background:$white;
+  border:3px solid $black;
+
+  &:before {
+    position: absolute;
+    content:"";
+    left:-3px;
+    top:-22px;
+    width:53px;
+    height:20px;
+    background:$white;
+    border-left:3px solid $black;
+    border-top:3px solid $black;
+    border-right:3px solid $black;
+  }
+
+  &:after {
+    position: absolute;
+    content:"";
+    right:-5px;
+    top:-13px;
+    width:29px;
+    height:3px;
+    transform:rotate(43deg);
+    background-color:$black;
+    z-index:100;
+  }
+
+  .corner{
+    position: absolute;
+    top:-21px;
+    left:56px;
+    width: 0;
+    height: 0;
+    border-bottom: 18px solid $white;
+    border-right: 15px solid transparent;
+    }
+}
+  p {
+    position: relative;
+    top:-18px;
+    left:-2px;
+
+  }
+}
+
+.popup--countdown {
+  @include day($width:1000px, $z-index:2000, $top:100px,$left:270px);
+  height:800px;
+  text-align:left;
+  display:none;
+
+  .message {
+    margin:60px 0 0 30px;
+    font-size:44px;
+    display:inline-block;
+    position: relative;
+
+  .text-santa {
+    font-size:64px;
+  }
+
+  @keyframes blink {
+    0% {opacity: 1};
+    45% {opacity: 1};
+    50% {opacity: 0};
+    95% {opacity: 0};
+    100% {opacity: 1};
+  }
+
+  &:after {
+    content:"";
+    position: absolute;
+    height:50px;
+    width:6px;
+    background:$black;
+    top:20px;
+    right:0px;
+    animation:blink 1s infinite;
+  }
+  }
+}
+
