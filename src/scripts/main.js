@@ -58,6 +58,10 @@ navigation.init = function() {
 $(function() {
   navigation.init();
   navigation.clearOldDays();
+
+  //clear old days if display is still running without a refresh 24hrs after startup
+  var dayInMilliseconds = 1000 * 60 * 60 * 24;
+  var oneDayRefresh = setInterval(navigation.clearOldDays,dayInMilliseconds );
 });
 
 
